@@ -1,0 +1,32 @@
+{
+  "name": "flashcard-app",           // Название проекта
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",                   // Запуск проекта в браузере для разработки
+    "build": "vite build",           // Сборка React проекта
+    "preview": "vite preview",       // Просмотр собранного проекта
+    "electron-start": "electron .",  // Запуск настольного приложения
+    "package": "electron-builder"    // Сборка exe для Windows
+  },
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "vite": "^4.5.14",               // Сборщик React
+    "electron": "^39.2.7",           // Для настольного приложения
+    "electron-builder": "^24.6.0"   // Для сборки exe/установщика
+  },
+  "build": {
+    "appId": "com.flashcards.app",   // Идентификатор приложения
+    "productName": "Flashcard App",  // Имя приложения
+    "win": {
+      "target": "nsis"               // Создание exe через NSIS
+    },
+    "directories": {
+      "buildResources": "assets",    // Папка с иконками
+      "output": "dist_electron"      // Папка с готовым exe после сборки
+    }
+  }
+}
